@@ -1,6 +1,6 @@
 # Papersome 📜
 
-papersome is a Python package that summarizes arxiv papers using OpenAI.
+papersome summarizes arxiv papers using OpenAI.
 
 ## Quickstart 🏃‍♂️
 
