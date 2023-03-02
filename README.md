@@ -4,9 +4,10 @@ papersome is a Python package that summarizes arxiv papers using OpenAI.
 
 ## Quickstart 🏃‍♂️
 
-1. Create a .env file and set your OpenAI API key: `OPENAI_API_KEY="key-goes-here"`
-2. Install the required packages with `pip install -r requirements.txt`
-3. Run python `summarize_arxiv.py <arxiv-url>`. For example: `python summarize_arxiv.py https://arxiv.org/abs/1706.03762`
+1. Create a file named `.env` in the repository root
+2. Insert your OpenAI API key into the `.env` file: `OPENAI_API_KEY="key-goes-here"`
+3. Install the required packages with `pip install -r requirements.txt`
+4. Run python `summarize_arxiv.py <arxiv-url>`. For example: `python summarize_arxiv.py https://arxiv.org/abs/1706.03762`
 
 ## Project structure 🚀
 
