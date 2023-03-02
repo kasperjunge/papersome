@@ -1,4 +1,3 @@
-import os
 import sys
 
 sys.path.append("./src")
@@ -21,7 +20,7 @@ def main(url: str, chain_type: str = "map_reduce"):
 
     print(summary)
 
-    with open(filename.replace("pdfs", "summaries"), "w") as f:
+    with open(filename.replace("pdfs", "summaries").replace(".pdf", ".txt"), "w") as f:
         f.write(summary)
 
 
