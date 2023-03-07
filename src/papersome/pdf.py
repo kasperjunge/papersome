@@ -1,12 +1,12 @@
-import os
+from pathlib import Path
+
 import requests
 from langchain import OpenAI
-from langchain.document_loaders import PDFMinerLoader, PagedPDFSplitter
-from langchain.docstore.document import Document
 from langchain.chains.summarize import load_summarize_chain
+from langchain.document_loaders import PagedPDFSplitter
 
 
-def download_pdf(url: str) -> str:
+def download_pdf(url: str) -> Path:
     """Downloads a PDF from a given URL and saves it to a local file.
 
     Args:
@@ -15,14 +15,17 @@ def download_pdf(url: str) -> str:
     Returns:
         The path to the downloaded PDF file.
     """
-    filename = f"./pdfs/{url.split('/')[-1]}.pdf"
-    if not os.path.isfile(filename):  # download the file if it doesn't exist locally
+    out_dir = Path("pdfs")
+    out_dir.mkdir(exist_ok=True)
+
+    filename = out_dir / f"{url.split('/')[-1]}.pdf"
+    if not filename.is_file():  # download the file if it doesn't exist locally
         if "arxiv.org/abs/" not in url:
             raise ValueError(f"URL {url} is not an arXiv URL.")
 
         pdf_url = url.replace("abs", "pdf") + ".pdf"
         response = requests.get(pdf_url)
-        with open(filename, "wb") as f:
+        with filename.open("wb") as f:
             f.write(response.content)
 
     return filename
