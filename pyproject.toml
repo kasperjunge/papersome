@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "papersome"
+version = "0.1.0"
+description = "Summarize arxiv papers with LLMs."
+authors = ["Kasper Junge"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "papersome"}]
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+toucans = "^0.0.14"
+pypdf2 = "^3.0.1"
+requests = "^2.31.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

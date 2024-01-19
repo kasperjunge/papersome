@@ -1,7 +1,0 @@
-langchain
-openai
-typer
-requests
-python-dotenv
-pypdf
-tiktoken
